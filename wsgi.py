@@ -605,8 +605,6 @@ class Hello(object):
     ctx.restore()
 
 
-
-
     </script>
     <canvas id="plotarea" width="12000" height="12000"></canvas>
     </body>
