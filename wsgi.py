@@ -548,18 +548,15 @@ class Hello(object):
     # 第2齒輪齒數
     n_g2 = 17
     # 第3齒輪齒數
-<<<<<<< HEAD
     n_g3 = 11
-=======
->>>>>>> eed60b4fbb0ffffcafe0710339ce8ef8b6314a2d
+    # 第4齒輪齒數
+    n_g4 = 13
 
     # 計算兩齒輪的節圓半徑
     rp_g1 = m*n_g1/2
     rp_g2 = m*n_g2/2
-<<<<<<< HEAD
     rp_g3 = m*n_g3/2
-=======
->>>>>>> eed60b4fbb0ffffcafe0710339ce8ef8b6314a2d
+    rp_g4 = m*n_g4/2
 
 
     # 將第1齒輪順時鐘轉 90 度
@@ -585,7 +582,6 @@ class Hello(object):
     spur.Spur(ctx).Gear(400+rp_g1+rp_g2,400,rp_g2,n_g2, pa, "black")
     ctx.restore()
 
-<<<<<<< HEAD
     # 第3齒
     ctx.save()
     # translate to the origin of second gear
@@ -597,9 +593,17 @@ class Hello(object):
     spur.Spur(ctx).Gear(400+rp_g1+rp_g2+rp_g2+rp_g3,400,rp_g3,n_g3, pa, "red")
     ctx.restore()
 
+    #第4齒
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(400+rp_g1+2*rp_g2+2*rp_g3+rp_g4,400)
+    # rotate to engage
+    ctx.rotate(-pi/2-pi/n_g4)
+    # put it back
+    ctx.translate(-(400+rp_g1+2*rp_g2+2*rp_g3+rp_g4),-400)
+    spur.Spur(ctx).Gear(400+rp_g1+2*rp_g2+2*rp_g3+rp_g4,400,rp_g4,n_g4, pa, "red")
+    ctx.restore()
 
-=======
->>>>>>> eed60b4fbb0ffffcafe0710339ce8ef8b6314a2d
 
 
 
